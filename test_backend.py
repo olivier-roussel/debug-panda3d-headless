@@ -10,14 +10,16 @@ loadPrcFileData("",
     load-display p3headlessgl
 """)
 
-base = ShowBase()                      
+base = ShowBase()
 ConfigVariableString('window-type', 'none').setValue('none')
 base.makeAllPipes()
 print(base.pipe.type)
+
+base.graphicsEngine.renderFrame()
 
 pipe = base.pipe
 fbProps = FrameBufferProperties.getDefault()
 winProps = WindowProperties.getDefault()
 sort_order = 0
-bf = base.graphics_engine.makeOutput(pipe, 'def0', sort_order, fbProps, winProps, GraphicsPipe.BFRefuseWindow)
-print(bf)
+# bf = base.graphics_engine.makeOutput(pipe, 'def0', sort_order, fbProps, winProps, GraphicsPipe.BFRefuseWindow)
+# print(bf)
