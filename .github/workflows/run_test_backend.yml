@@ -50,6 +50,9 @@ jobs:
         echo "-----------"
         ldd $CONDA_PREFIX/lib/libp3headlessgl.so
         echo "-----------"
+        glxinfo
+        echo "-----------"
+        glxinfo | grep 'version'
 
     - name: Run backend test
       shell: bash -l {0}
