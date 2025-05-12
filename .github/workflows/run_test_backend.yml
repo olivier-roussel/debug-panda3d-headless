@@ -27,12 +27,13 @@ jobs:
     - name: Install panda3d
       shell: bash -l {0}
       run: |
+        conda install mesa-libegl-devel-conda-x86_64 mesa-libgl-devel-conda-x86_64
         conda install "panda3d=*=withegl*" -c olivier.roussel
 
-    - name: Patch panda config to force headless
-      shell: bash -l {0}
-      run: |
-        patch $CONDA_PREFIX/etc/panda3d/Config.prc force-headless-config.patch
+    # - name: Patch panda config to force headless
+    #   shell: bash -l {0}
+    #   run: |
+    #     patch $CONDA_PREFIX/etc/panda3d/Config.prc force-headless-config.patch
 
     - name: Show conda config
       shell: bash -l {0}

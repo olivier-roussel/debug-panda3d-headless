@@ -6,11 +6,10 @@ loadPrcFileData("",
 """
     gl-debug true
     audio-library-name null
-    window-type none
     load-display p3headlessgl
 """)
 
-base = ShowBase(windowType='none')
+base = ShowBase(windowType='offscreen')
 
 model = loader.loadModel('environment')
 model.reparentTo(base.render)
