@@ -8,6 +8,7 @@ loadPrcFileData("",
     audio-library-name null
     window-type none
     load-display p3headlessgl
+    notify-level-egldisplay debug
 """)
 
 base = ShowBase(windowType='none')
