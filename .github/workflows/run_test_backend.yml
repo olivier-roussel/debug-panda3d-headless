@@ -1,0 +1,47 @@
+name: run-test-backend
+
+on:
+  workflow_dispatch:
+
+jobs:
+  compile-test-using-package:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+
+    name: "Run test backend on ${{ matrix.os }}"
+    runs-on: ${{ matrix.os }}
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: recursive
+
+    - name: Install miniconda
+      uses: conda-incubator/setup-miniconda@v3
+      with:
+        activate-environment: conda-ci
+        auto-update-conda: true
+        miniforge-version: latest
+
+    - name: Install panda3d
+      shell: bash -l {0}
+      run: |
+        conda install panda3d -c olivier.roussel
+
+    - name: Show conda config
+      shell: bash -l {0}
+      run: |
+        conda info
+        conda list
+        conda config --show-sources
+        conda config --show
+        printenv | sort
+
+    - name: Run backend test
+      shell: bash -l {0}
+      run: |
+        pwd
+        ls -al
+        python test_backend.py
+
