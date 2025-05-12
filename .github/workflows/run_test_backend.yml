@@ -43,6 +43,14 @@ jobs:
         conda config --show
         printenv | sort
 
+    - name: Debug info
+      shell: bash -l {0}
+      run: |
+        ldd $CONDA_PREFIX/lib/libpandagl.so
+        echo "-----------"
+        ldd $CONDA_PREFIX/lib/libp3headlessgl.so
+        echo "-----------"
+
     - name: Run backend test
       shell: bash -l {0}
       run: |
