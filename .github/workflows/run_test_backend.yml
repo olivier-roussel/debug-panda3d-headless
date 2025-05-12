@@ -27,7 +27,7 @@ jobs:
     - name: Install panda3d
       shell: bash -l {0}
       run: |
-        conda install panda3d -c olivier.roussel
+        conda install "panda3d=*=withegl*" -c olivier.roussel
 
     - name: Show conda config
       shell: bash -l {0}
