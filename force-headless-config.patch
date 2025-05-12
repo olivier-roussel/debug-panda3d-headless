@@ -1,0 +1,13 @@
+--- Config.prc.orig	2025-05-12 12:01:22.212799599 +0200
++++ Config.prc	2025-05-12 12:01:32.505654406 +0200
+@@ -12,8 +12,8 @@
+ # back to the next display module indicated by aux-display,
+ # when that fails, the next aux-display line, and so on.
+ 
+-load-display pandagl
+-aux-display p3headlessgl
++#load-display pandagl
++load-display p3headlessgl
+ #load-display p3tinydisplay
+ 
+ # These control the placement and size of the default rendering window.
