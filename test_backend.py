@@ -4,22 +4,19 @@ from panda3d.direct import *
 
 loadPrcFileData("",
 """
-    gl-debug #t
+    gl-debug true
     audio-library-name null
-    window-type none
     load-display p3headlessgl
-    notify-level-egldisplay debug
 """)
 
-base = ShowBase(windowType='none')
-base.makeAllPipes()
-print(base.pipe.type)
+base = ShowBase(windowType='offscreen')
+
+model = loader.loadModel('environment')
+model.reparentTo(base.render)
 
 base.graphicsEngine.renderFrame()
+base.graphicsEngine.renderFrame()
+base.graphicsEngine.renderFrame()
+base.graphicsEngine.renderFrame()
 
-pipe = base.pipe
-fbProps = FrameBufferProperties.getDefault()
-winProps = WindowProperties.getDefault()
-sort_order = 0
-bf = base.graphics_engine.makeOutput(pipe, 'def0', sort_order, fbProps, winProps, GraphicsPipe.BFRefuseWindow)
-print(bf)
+base.screenshot('test.jpg', defaultFilename=False)

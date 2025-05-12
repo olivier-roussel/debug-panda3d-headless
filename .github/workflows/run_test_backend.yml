@@ -57,4 +57,5 @@ jobs:
         pwd
         ls -al
         python test_backend.py
+        file test.jpg
 
