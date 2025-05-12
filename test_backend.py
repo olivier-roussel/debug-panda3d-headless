@@ -1,7 +1,15 @@
 from direct.showbase.ShowBase import ShowBase
 from panda3d.core import *
 from panda3d.direct import *
-loadPrcFileData('', 'window-type none')
+
+loadPrcFileData("",
+"""
+    gl-debug #t
+    audio-library-name null
+    window-type offscreen
+    load-display p3headlessgl
+""")
+
 base = ShowBase()                      
 ConfigVariableString('window-type', 'none').setValue('none')
 base.makeAllPipes()
