@@ -6,6 +6,7 @@ loadPrcFileData("",
 """
     gl-debug true
     audio-library-name null
+    window-type offscreen
     load-display p3headlessgl
 """)
 
