@@ -42,6 +42,7 @@ jobs:
         conda config --show-sources
         conda config --show
         printenv | sort
+        eglinfo
 
     - name: Run backend test
       shell: bash -l {0}
