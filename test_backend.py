@@ -6,12 +6,11 @@ loadPrcFileData("",
 """
     gl-debug #t
     audio-library-name null
-    window-type offscreen
+    window-type none
     load-display p3headlessgl
 """)
 
-base = ShowBase()
-ConfigVariableString('window-type', 'none').setValue('none')
+base = ShowBase(windowType='none')
 base.makeAllPipes()
 print(base.pipe.type)
 
