@@ -20,5 +20,5 @@ pipe = base.pipe
 fbProps = FrameBufferProperties.getDefault()
 winProps = WindowProperties.getDefault()
 sort_order = 0
-# bf = base.graphics_engine.makeOutput(pipe, 'def0', sort_order, fbProps, winProps, GraphicsPipe.BFRefuseWindow)
-# print(bf)
+bf = base.graphics_engine.makeOutput(pipe, 'def0', sort_order, fbProps, winProps, GraphicsPipe.BFRefuseWindow)
+print(bf)
