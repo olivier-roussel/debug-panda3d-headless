@@ -6,9 +6,8 @@ loadPrcFileData("",
 """
     gl-debug true
     audio-library-name null
+    notify-level-glgsg debug
     load-display p3headlessgl
-    notify-level-display debug
-    notify-level-egldisplay spam
 """)
 
 base = ShowBase(windowType='offscreen')
