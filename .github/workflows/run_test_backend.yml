@@ -48,10 +48,6 @@ jobs:
       run: |
         ldd $CONDA_PREFIX/lib/libpandagl.so
         echo "-----------"
-        ldd $CONDA_PREFIX/lib/libp3headlessgl.so
-        echo "-----------"
-        which glxinfo
-        which eglinfo
 
     - name: Run backend test
       shell: bash -l {0}
