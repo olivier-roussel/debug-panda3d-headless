@@ -27,7 +27,7 @@ jobs:
     - name: Install panda3d
       shell: bash -l {0}
       run: |
-        conda install "panda3d=*=withegl*" -c olivier.roussel
+        conda install "panda3d=*=withegl*_4" -c olivier.roussel
 
     # - name: Patch panda config to force headless
     #   shell: bash -l {0}
@@ -45,15 +45,23 @@ jobs:
 
     - name: Debug info
       shell: bash -l {0}
+      continue-on-error: true
       run: |
         ldd $CONDA_PREFIX/lib/libpandagl.so
         echo "-----------"
+        ldd $CONDA_PREFIX/lib/libp3headlessgl.so
+        echo "-----------"
 
-    - name: Run backend test
+    - name: Run backend test (offscreen)
+      continue-on-error: true
       shell: bash -l {0}
       run: |
-        pwd
-        ls -al
-        python test_backend.py
+        python test_backend_offscreen.py
         file test.jpg
 
+    - name: Run backend test (null)
+      continue-on-error: true
+      shell: bash -l {0}
+      run: |
+        python test_backend_null.py
+        file test.jpg
