@@ -28,6 +28,7 @@ jobs:
       shell: bash -l {0}
       run: |
         conda install "panda3d=*=withegl*_4" -c olivier.roussel
+        conda install mesalib
 
     # - name: Patch panda config to force headless
     #   shell: bash -l {0}
