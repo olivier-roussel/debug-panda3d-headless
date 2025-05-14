@@ -6,7 +6,7 @@ loadPrcFileData("",
 """
     gl-debug true
     audio-library-name null
-    load-display p3headlessgl
+    load-display p3tinydisplay
     notify-level-display debug
     notify-level-egldisplay spam
 """)

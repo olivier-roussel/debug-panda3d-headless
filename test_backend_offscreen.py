@@ -10,7 +10,7 @@ loadPrcFileData("",
     notify-level-glgsg debug
     notify-level-display debug
     notify-level-egldisplay spam
-    load-display p3headlessgl
+    load-display p3tinydisplay
 """)
 
 base = ShowBase(windowType='offscreen')
