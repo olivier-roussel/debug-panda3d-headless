@@ -51,7 +51,5 @@ jobs:
       continue-on-error: true
       shell: bash -l {0}
       run: |
-        sudo /usr/bin/Xvfb :0 -screen 0 1280x1024x24 &
-        export DISPLAY=:0
-        python test_backend_offscreen.py
+        xvfb-run --auto-servernum python test_backend_offscreen.py
         file test.jpg
