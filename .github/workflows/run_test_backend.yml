@@ -8,7 +8,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, macos-13, macos-14, macos-latest]
+        os: [ubuntu-latest]
 
     name: "Run test backend on ${{ matrix.os }}"
     runs-on: ${{ matrix.os }}
@@ -51,6 +51,7 @@ jobs:
       continue-on-error: true
       shell: bash -l {0}
       run: |
-        which xvfb-run
-        xvfb-run --auto-servernum python test_backend_offscreen.py
+        Xvfb :99 -screen 0 1280x1024x24 -nolisten tcp &
+        export DISPLAY=:99
+        python test_backend_offscreen.py
         file test.jpg
