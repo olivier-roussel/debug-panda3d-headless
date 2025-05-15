@@ -8,7 +8,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest]
+        os: [ubuntu-latest, macos-13, macos-14, macos-latest]
 
     name: "Run test backend on ${{ matrix.os }}"
     runs-on: ${{ matrix.os }}
@@ -27,7 +27,7 @@ jobs:
     - name: Install panda3d
       shell: bash -l {0}
       run: |
-        conda install "panda3d=*=withegl*_4" -c olivier.roussel
+        conda install panda3d -c panda3d-forge
 
     - name: Show conda config
       shell: bash -l {0}
